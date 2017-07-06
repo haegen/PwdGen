@@ -1,0 +1,3 @@
+C:\Users\Timper\Documents\Visual Studio 2015\Projects\PasswortGenerator\PwdGenSetup\bin\Debug\cab1.cab
+C:\Users\Timper\Documents\Visual Studio 2015\Projects\PasswortGenerator\PwdGenSetup\bin\Debug\PwdGenSetup.msi
+C:\Users\Timper\Documents\Visual Studio 2015\Projects\PasswortGenerator\PwdGenSetup\bin\Debug\PwdGenSetup.wixpdb

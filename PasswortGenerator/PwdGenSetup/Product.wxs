@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
+	<Product Id="*" Name="PwdGen" Language="1033" Version="1.0.0.0" Manufacturer="d3rn3g4" UpgradeCode="455fd6b7-5b72-4543-baf6-ac092580b240">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="PwdGen" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="MENU_SHORTCUT_COMP"/>
+		</Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir" />
+  
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="PwdGen"/>
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="MENU_FOLDER" Name="PwdGen"/>
+      </Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
+      <Component Id="CMP_PwdGen_Setup" Guid="{6195C3FC-866C-4EEF-8FA0-20248730DFE4}">
+        <File Id="FILE_PwdGen.exe" Source="$(var.PwdGen.TargetPath)" KeyPath="yes"/>
+        
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="MENU_FOLDER">
+      <Component Id="MENU_SHORTCUT_COMP" Guid="{A17C8630-C1C8-412C-992F-75DD4F70A95A}">
+        <Shortcut Id="MENU_SHORTCUT" Name="PwdGen" Description="Run PwdGen" Target="[INSTALLFOLDER]PwdGen.exe"/>
+        <RemoveFolder Id="MENU_FOLDER" On="install"/>
+        <RegistryValue Root="HKCU" Key="Software\PwdGen" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

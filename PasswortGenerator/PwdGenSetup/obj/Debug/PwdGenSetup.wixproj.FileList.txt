@@ -1,0 +1,7 @@
+obj\Debug\Product.wixobj
+C:\Users\Timper\Documents\Visual Studio 2015\Projects\PasswortGenerator\PwdGenSetup\bin\Debug\cab1.cab
+C:\Users\Timper\Documents\Visual Studio 2015\Projects\PasswortGenerator\PwdGenSetup\bin\Debug\PwdGenSetup.msi
+C:\Users\Timper\Documents\Visual Studio 2015\Projects\PasswortGenerator\PwdGenSetup\bin\Debug\PwdGenSetup.wixpdb
+obj\Debug\PwdGenSetup.wixproj.BindContentsFileListnull.txt
+obj\Debug\PwdGenSetup.wixproj.BindOutputsFileListnull.txt
+obj\Debug\PwdGenSetup.wixproj.BindBuiltOutputsFileListnull.txt
